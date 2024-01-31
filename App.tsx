@@ -1,29 +1,16 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- */
+import { View, Text } from 'react-native'
+import React, { useEffect } from 'react'
+import SplashScreen from 'react-native-splash-screen';
 
-import React from 'react';
-import type {PropsWithChildren} from 'react';
-import {
-  Text,
-  View,
-} from 'react-native';
-
-type SectionProps = PropsWithChildren<{
-  title: string;
-}>;
-function App(): React.JSX.Element {
+export default function App() {
+  useEffect(() => {
+    setTimeout(() => {
+      SplashScreen.hide()
+    }, 5000);
+  }, [])
   return (
-   <>
-   <View>
-    <Text>Hello Native</Text>
-   </View>
-   </>
-  );
+    <View>
+      <Text>App</Text>
+    </View>
+  )
 }
-
-
-export default App;
